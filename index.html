@@ -1,14 +1,34 @@
 <html>
 <head>
-    <tittle>Hangman App</tittle>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="app.js"></script>
 </head>
 <body ng-app="Hangman" ng-controller="game">
 
 
-<h1>{{demo}}</h1>
-
+<div>
+    <div>
+        Gussess Left : {{guesses}}
+    </div>
+    <div>
+        Your Incorrect gusses : <span ng-repeat="letter in incorrectLetter track by $index">
+            {{letter}}
+        </span>
+    </div>
+    <div>
+        Your Correct gusses : <span ng-repeat="letter in correctLetter track by $index">
+            {{letter}}
+        </span>
+    </div>
+    <div>
+        Guess : {{displayWords}}
+    </div>
+    <div>
+        <input type="text" name="guess" ng-model="input.letter">
+        <button ng-click="letterChosen()">Submit</button>
+    </div>
+</div>
 
 </body>
 </html>
